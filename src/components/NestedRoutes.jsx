@@ -11,10 +11,9 @@ import {
 } from "react-router-dom";
 import HomeNested from "./HomeNested";
 import AdminManger from "./AdminManager";
-import GetCatFacts from "./GetCatFacts";
-import GetBTCPrice from "./GetBTCPrice";
-import BuyCoins from "./BuyCoins"
 import MyBoats from "./MyBoats";
+import NewAutions from "./NewAutions"
+import AllAuctions from "./AllAuctions";
 
 export default function Nesting(props) {
   let userrole = props.userrole;
@@ -27,19 +26,13 @@ export default function Nesting(props) {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/catfacts">
-              <GetCatFacts />
-            </Route>
             {userrole === "user" && (
             <Route path="/myboats">
               <MyBoats />
             </Route>
             )}
-            <Route path="/btcprice">
-              <GetBTCPrice />
-            </Route>
-            <Route path="/buycoins">
-              <BuyCoins />
+            <Route path="/allAuctions">
+              <AllAuctions />
             </Route>
             {userrole === "admin" && (
               <Route path="/admin">
@@ -48,7 +41,7 @@ export default function Nesting(props) {
             )}
             {userrole === "admin" && (
               <Route path="/newautions">
-                <Topics />
+                <NewAutions />
               </Route>
             )}
           </Switch>
@@ -74,6 +67,11 @@ const Header = (props) => {
         </NavLink>
       </li>
       )}
+           <li>
+        <NavLink exact activeClassName="selected" to="/allAuctions">
+          See all Auctions
+        </NavLink>
+      </li>
 
       {userrole === "admin" && (
         <li>

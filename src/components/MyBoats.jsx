@@ -64,8 +64,6 @@ return (
       </Table> 
   
   
-  
-  
   <div className="form-group"
   onChange={handleChange}
   onSubmit={handleSubmit}
