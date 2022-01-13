@@ -12,9 +12,9 @@ import {
 import HomeNested from "./HomeNested";
 import AdminManger from "./AdminManager";
 import GetCatFacts from "./GetCatFacts";
-import Owners from "./Owners";
 import GetBTCPrice from "./GetBTCPrice";
 import BuyCoins from "./BuyCoins"
+import MyBoats from "./MyBoats";
 
 export default function Nesting(props) {
   let userrole = props.userrole;
@@ -30,9 +30,11 @@ export default function Nesting(props) {
             <Route path="/catfacts">
               <GetCatFacts />
             </Route>
-            <Route path="/Owners">
-              <Owners />
+            {userrole === "user" && (
+            <Route path="/myboats">
+              <MyBoats />
             </Route>
+            )}
             <Route path="/btcprice">
               <GetBTCPrice />
             </Route>
@@ -45,7 +47,7 @@ export default function Nesting(props) {
               </Route>
             )}
             {userrole === "admin" && (
-              <Route path="/topics">
+              <Route path="/newautions">
                 <Topics />
               </Route>
             )}
@@ -65,31 +67,18 @@ const Header = (props) => {
           Home
         </NavLink>
       </li>
+      {userrole === "user" && (
       <li>
-        <NavLink activeClassName="selected" to="/catfacts">
-          Cat Facts
+        <NavLink activeClassName="selected" to="/myboats">
+          My Boats
         </NavLink>
       </li>
-      <li>
-        <NavLink activeClassName="selected" to="/Owners">
-          See Owners
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeClassName="selected" to="/btcprice">
-          BTC Price
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeClassName="selected" to="/buycoins">
-          Buy Coin
-        </NavLink>
-      </li>
+      )}
 
       {userrole === "admin" && (
         <li>
-          <NavLink activeClassName="selected" to="/topics">
-            Topics
+          <NavLink activeClassName="selected" to="/newautions">
+            New Aution
           </NavLink>
         </li>
       )}

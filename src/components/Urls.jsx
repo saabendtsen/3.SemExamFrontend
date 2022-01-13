@@ -1,5 +1,5 @@
-//const Server_URL = "http://localhost:8080/CA3_eksamenTest_war_exploded";
-const Server_URL = "https://elcaptaino.ninja/3.SemExam";
+const Server_URL = "http://localhost:8080/EksamenTest_war_exploded";
+//const Server_URL = "https://elcaptaino.ninja/3.SemExam";
 
 const catFacts_URL =
   "http://localhost:8080/CA2_Group_war_exploded/api/info/catfact";
