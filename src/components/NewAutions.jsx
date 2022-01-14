@@ -50,7 +50,6 @@ const NewAutions = () => {
         </Button>
       </Form>
     </div>
-    <div>{JSON.stringify(newAution)}</div>
         </>)
 }
 export default NewAutions;

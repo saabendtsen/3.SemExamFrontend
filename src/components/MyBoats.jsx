@@ -116,7 +116,6 @@ const MyBoats = () => {
           </Form>
         </div>
       </div>
-      <div>{JSON.stringify(newBoat)}</div>
     </>
   )
 }

@@ -50,7 +50,6 @@ const AddEditBoat = (props) => {
                     </Button>
                 </Form>
             </div>
-            <div>{JSON.stringify(newBoat)}</div>
         </>
     )
 }
